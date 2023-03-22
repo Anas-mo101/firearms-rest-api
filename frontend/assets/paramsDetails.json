@@ -1,0 +1,15 @@
+{
+    "/v1/api/firearms": [
+        { "parameter": "search", "type": "string", "desc": "Limit results to those matching a string." },
+        { "parameter": "page", "type": "string", "desc": "Current page of the collection. Default is 0" },
+        { "parameter": "limit", "type": "string", "desc": "Maximum number of items to be returned in result set. Default is 10" },
+        { "parameter": "classification", "type": "string", "desc": "Limit results to those with matching classification" },
+        { "parameter": "order", "type": "string", "desc": "Order sort attribute ascending or descending. Options: asc and desc." }
+    ],
+    "/v1/api/classification": [
+        { "parameter": "search", "type": "string", "desc": "Limit results to those matching a string." },
+        { "parameter": "page", "type": "string", "desc": "Current page of the collection. Default is 0" },
+        { "parameter": "limit", "type": "string", "desc": "Maximum number of items to be returned in result set. Default is 10" },
+        { "parameter": "order", "type": "string", "desc": "Order sort attribute ascending or descending. Options: asc and desc." }
+    ]
+}
