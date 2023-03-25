@@ -1,0 +1,49 @@
+version: '3'
+services:
+  mongo:
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    expose:
+      - 27017
+    ports:
+      - 27017:27017
+    container_name: mongo
+    image: mongo
+    networks:
+    - mongo
+
+  app:
+    container_name: firearms-rest-server
+    restart: always
+    build: .
+    environment:
+      - MONGO_DB_USERNAME=admin
+      - MONGO_DB_PWD=admin
+    expose:
+    - 3000
+    ports:
+    - 3000:3000
+    depends_on:
+    - mongo
+    networks:
+    - mongo
+  
+  # mongo-express: 
+  #   container_name: mongo-express-db
+  #   environment:
+  #   - MONGO_INITDB_ROOT_USERNAME=admin
+  #   - MONGO_INITDB_ROOT_PASSWORD=admin
+  #   - ME_CONFIG_MONGODB_SERVER=mongo
+  #   restart: unless-stopped
+  #   image: mongo-express
+  #   ports: 
+  #   - '8081:8081'
+  #   networks: 
+  #   - mongo
+  #   depends_on:
+  #   - mongo
+
+networks:
+  mongo:
+    name: mongo
