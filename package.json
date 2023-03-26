@@ -1,16 +1,14 @@
 {
-  "name": "sample-order-system-api",
+  "name": "firearm-rest-api",
   "version": "1.0.0",
-  "description": "A REST API that allows to create products and place orders.",
+  "description": "The Firearms REST API service for accessing firearm-related data",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
     "start": "node index.js",
-    "lint": "eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Vassilis Barzokas <contact@vbarzokas.com>",
-  "license": "MIT",
+  "author": "ANMO <connect@anmo.space>",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.2",
